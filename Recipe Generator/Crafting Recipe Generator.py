@@ -39,7 +39,7 @@ def GenerateCraft(OutputItem, OutputQuantity, CraftingTime, *IngredientsAndAmoun
 
     # Make the Output part
     finalstr = f"{CBR}\n" \
-               f"   {Q}itemId{Q}: {OutputItem},\n" \
+               f"   {Q}itemId{Q}: {Q}{OutputItem}{Q},\n" \
                f"   {Q}quantity{Q}: {OutputQuantity},\n" \
                f"   {Q}craftTime{Q}: {CraftingTime},\n" \
                f"   {Q}ingredientList{Q}: [\n"
@@ -50,13 +50,13 @@ def GenerateCraft(OutputItem, OutputQuantity, CraftingTime, *IngredientsAndAmoun
             tempstr += \
                     f"       {CBR}\n" \
                     f"           {Q}quantity{Q}: {amount[i]},\n" \
-                    f"           {Q}itemId{Q}: {ingredientsList[i]}\n" \
+                    f"           {Q}itemId{Q}: {Q}{ingredientsList[i]}{Q}\n" \
                     f"       {CBL},\n"
         else:
             tempstr += \
                 f"       {CBR}\n" \
                 f"           {Q}quantity{Q}: {amount[i]},\n" \
-                f"           {Q}itemId{Q}: {ingredientsList[i]}\n" \
+                f"           {Q}itemId{Q}: {Q}{ingredientsList[i]}{Q}\n" \
                 f"       {CBL}\n"
 
     #Assemble the Inputs and Outputs together
