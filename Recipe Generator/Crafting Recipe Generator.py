@@ -35,7 +35,7 @@ def GenerateCraft(OutputItem, OutputQuantity, CraftingTime, *IngredientsAndAmoun
         else:
             amount += str(IngredientsAndAmount[i])
             amountList.append(amount)
-            ingredients = ""
+            amount = ""
 
     # Make the Output part
     finalstr = f"{CBR}\n" \
@@ -45,17 +45,17 @@ def GenerateCraft(OutputItem, OutputQuantity, CraftingTime, *IngredientsAndAmoun
                f"   {Q}ingredientList{Q}: [\n"
 
     #Make the Input part
-    for i in range(len(amount)):
-        if not i+1 == len(amount):
+    for i in range(len(ingredientsList)):
+        if not i+1 == len(ingredientsList):
             tempstr += \
                     f"       {CBR}\n" \
-                    f"           {Q}quantity{Q}: {amount[i]},\n" \
+                    f"           {Q}quantity{Q}: {amountList[i]},\n" \
                     f"           {Q}itemId{Q}: {Q}{ingredientsList[i]}{Q}\n" \
                     f"       {CBL},\n"
         else:
             tempstr += \
                 f"       {CBR}\n" \
-                f"           {Q}quantity{Q}: {amount[i]},\n" \
+                f"           {Q}quantity{Q}: {amountList[i]},\n" \
                 f"           {Q}itemId{Q}: {Q}{ingredientsList[i]}{Q}\n" \
                 f"       {CBL}\n"
 
